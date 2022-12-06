@@ -2,21 +2,22 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
 	"name": "Java",
-	"image": "mcr.microsoft.com/devcontainers/java:11",
+	// "build": { "dockerfile": "Dockerfile"},
+	"image": "docker.io/bosschaert/rde_dc:1",
+
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "none",
 			"installMaven": "true",
 			"installGradle": "false"
-		},
-		"ghcr.io/devcontainers/features/node:1": {}
+		}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [3000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install --no-audit -g @adobe/aio-cli && aio plugins:install @adobe/aio-cli-plugin-aem-rde && aio plugins:install @adobe/aio-cli-plugin-cloudmanager && aio plugins:update && mvn install",
+	// "postCreateCommand": "npm install --no-audit -g @adobe/aio-cli && aio plugins:install @adobe/aio-cli-plugin-aem-rde && aio plugins:install @adobe/aio-cli-plugin-cloudmanager && aio plugins:update && mvn install",
 
 	// Configure tool-specific properties.
 	"customizations": {
