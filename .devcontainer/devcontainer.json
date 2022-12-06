@@ -3,7 +3,7 @@
 {
 	"name": "Java",
 	// "build": { "dockerfile": "Dockerfile"},
-	"image": "docker.io/bosschaert/rde_dc:1",
+	"image": "docker.io/bosschaert/rde_dc:2",
 
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
