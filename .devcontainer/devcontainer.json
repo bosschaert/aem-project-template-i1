@@ -9,20 +9,20 @@
 			"installMaven": "true",
 			"installGradle": "false"
 		},
-		"ghcr.io/devcontainers-contrib/features/direnv-asdf:1": {}
+		"ghcr.io/devcontainers/features/node:1": {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "mvn install",
+	"postCreateCommand": "npm install --no-audit -g @adobe/aio-cli && aio plugins:install @adobe/aio-cli-plugin-aem-rde && aio plugins:install @adobe/aio-cli-plugin-cloudmanager && aio plugins:update && mvn install",
 
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"/workspaces/test-github-wfproj/.devcontainer/vsix/rde-ide-0.0.1.vsix"
+				"${containerWorkspaceFolder}/.devcontainer/vsix/rde-ide-0.0.1.vsix"
 			]
 		}
 	}
