@@ -5,13 +5,13 @@
 	// "build": { "dockerfile": "Dockerfile"},
 	"image": "docker.io/bosschaert/rde_dc:2",
 
-	"features": {
-		"ghcr.io/devcontainers/features/java:1": {
-			"version": "none",
-			"installMaven": "true",
-			"installGradle": "false"
-		}
-	},
+	// "features": {
+	// 	"ghcr.io/devcontainers/features/java:1": {
+	// 		"version": "none",
+	// 		"installMaven": "true",
+	// 		"installGradle": "false"
+	// 	}
+	// },
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [3000],
@@ -23,6 +23,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"vscjava.vscode-java-pack",
 				"${containerWorkspaceFolder}/.devcontainer/vsix/rde-ide-0.0.1.vsix"
 			]
 		}
